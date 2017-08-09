@@ -1,0 +1,25 @@
+group 'RESTful-Web-Service-Learn'
+version '1.0-SNAPSHOT'
+
+
+jar {
+    baseName = 'eureka-client'
+    version = '0.0.1-SNAPSHOT'
+}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencyManagement {
+    imports {
+        mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Camden.SR5'
+    }
+}
+
+dependencies {
+    compile('org.springframework.cloud:spring-cloud-starter-eureka-server')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
