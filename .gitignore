@@ -1,0 +1,20 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea
+
+.gradle
+
+*/build/
+*/libs/
+target/
+*.iml
+[Ll]ogs
+*.DS_Store
+
+logrotate/
+bower_components/
+qr_test/
+classes/
+
+output/
+websocket/hex-test/
+user/userPic-test/

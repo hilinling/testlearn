@@ -1,4 +1,4 @@
-group 'RESTful-Web-Service-Learn'
+group 'testlearn'
 version '1.0-SNAPSHOT'
 
 //gradle脚本自身需要使用的资源,
@@ -16,7 +16,7 @@ apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 
 jar{
-    baseName = 'RESTful-Web-Service-Learn'
+    baseName = 'testlearn'
     version = '0.1.0'
 }
 

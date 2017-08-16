@@ -21,4 +21,5 @@ include 'angular-resource'
 include 'spel'
 include 'plainjava'
 include 'test'
+include 'udptest'
 
