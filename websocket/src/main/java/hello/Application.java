@@ -3,6 +3,7 @@ package hello;
 import javafx.beans.binding.StringBinding;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.http.HttpHeaders;
 import org.springframework.messaging.converter.StringMessageConverter;
 import org.springframework.messaging.simp.stomp.StompSessionHandler;
 import org.springframework.messaging.simp.stomp.StompSessionHandlerAdapter;
@@ -11,6 +12,9 @@ import org.springframework.web.socket.client.WebSocketClient;
 import org.springframework.web.socket.client.WebSocketConnectionManager;
 import org.springframework.web.socket.client.standard.StandardWebSocketClient;
 import org.springframework.web.socket.messaging.WebSocketStompClient;
+
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by ling on 17/7/13.
@@ -50,7 +54,20 @@ public class Application {
             }
         };
         WebSocketConnectionManager webSocketConnectionManager = new WebSocketConnectionManager(webSocketClient,webSocketHandler,url);
-        webSocketConnectionManager.setOrigin("N2-12345678901234567890");
+        HttpHeaders headers = new HttpHeaders();
+        List<String> deviceList = new LinkedList<>();
+        deviceList.add("N2-12345678901234567890");
+        headers.put("deviceId",deviceList);
+        List<String> versionList = new LinkedList<>();
+        versionList.add("N2-12345678901234567890");
+        headers.put("version",versionList);
+        List<String> protocol = new LinkedList<>();
+        protocol.add("tcp");
+        headers.put("protocol",protocol);
+        List<String> line = new LinkedList<>();
+        line.add("1");
+        headers.put("line",line);
+        webSocketConnectionManager.setHeaders(headers);
         try {
             while (true){
 
@@ -86,9 +103,12 @@ public class Application {
         //请求包 指令0xD0,
         String requestTime ="20 00 07 D0 00 98 3a 00 00 00";
 
+        //指令响应包
+        String line = "30 00 02 00 02";
 
 
-        String[] list = requestTime.split(" ");
+
+        String[] list = msg1.split(" ");
 
         byte[] result = new byte[list.length+1];
         for(int i=0;i<list.length;i++){

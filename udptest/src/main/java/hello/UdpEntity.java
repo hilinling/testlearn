@@ -18,5 +18,7 @@ public class UdpEntity {
     String deviceId;
     String version;
     String protocol;
-    HashMap<String,RequestSpy> request;
+    Integer line;
+    HashMap<String,RequestSpy> requests;
+    HashMap<String,Double> data;
 }

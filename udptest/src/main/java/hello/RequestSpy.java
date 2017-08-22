@@ -1,5 +1,6 @@
 package hello;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -8,8 +9,12 @@ import lombok.Data;
  */
 @Data
 @AllArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class RequestSpy {
-    private String data;
+    private Object data;
     private int delayed;
     private String by;
+
+    public RequestSpy() {
+    }
 }
