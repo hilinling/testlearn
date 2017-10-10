@@ -10,9 +10,10 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by ling on 17/7/13.
+ * Created by ling on 17/10/10.
  */
-public class Application {
+public class TCPp2testApplication {
+
 
 
     public static void main(String[] args){
@@ -157,4 +158,5 @@ public class Application {
         String mesg = new String(bytes).trim();
         System.out.println("msg ==="+mesg);
     }
+
 }

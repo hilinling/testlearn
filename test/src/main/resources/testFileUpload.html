@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>file upload test</title>
+</head>
+<body>
+    <form enctype="multipart/form-data" action="http://localhost:9840/edition/M700/0.0.2">
+        <input type="file" name="file">
+        <input type="submit" value="提交">
+    </form>
+
+    <form enctype="multipart/form-data" action="http://www.hwlantian.com/sky-user/v1/login/phone" method="POST">
+        <input type="tel" name="phone" value="18600238340">
+        <input type="password" name="password" value="e10adc3949ba59abbe56e057f20f883e">
+        <input type ="submit" value="login">
+    </form>
+    <button ng-click="post()">提交</button>
+<script src="jquery-2.1.4.min.js"></script>
+</body>
+</html>

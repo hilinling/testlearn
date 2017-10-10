@@ -22,4 +22,6 @@ include 'spel'
 include 'plainjava'
 include 'test'
 include 'udptest'
+include 'tcp-p1-test'
+include 'tcp-p2-test'
 
